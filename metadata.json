@@ -1,0 +1,6 @@
+{
+  "name": "Saad Mehmood",
+  "description": "Luxury Pakistani menswear fabric house offering premium cotton, wash & wear, and authentic latha.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
