@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Instagram, Facebook, MessageCircle, ShieldCheck } from 'lucide-react';
+import Img from 'next/image';
 
 export default function Footer() {
   return (
@@ -14,7 +15,6 @@ export default function Footer() {
               <span className="text-lg sm:text-xl font-light tracking-[0.22em] text-[#F5F5F5] uppercase block">
                 SAAD MEHMOOD
               </span>
-              
             </Link>
 
             <p className="text-xs text-[#888888] font-light leading-relaxed max-w-sm">
@@ -27,7 +27,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-none border border-[#262626] bg-[#0E0E0E] flex items-center justify-center text-[#888888] hover:text-[#C5A059] hover:border-[#C5A059] transition-colors"
-                aria-label="Saad Mehmood  on Instagram"
+                aria-label="Saad Mehmood on Instagram"
               >
                 <Instagram className="w-3.5 h-3.5" />
               </a>
@@ -36,7 +36,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-none border border-[#262626] bg-[#0E0E0E] flex items-center justify-center text-[#888888] hover:text-[#C5A059] hover:border-[#C5A059] transition-colors"
-                aria-label="Saad Mehmood  on Facebook"
+                aria-label="Saad Mehmood on Facebook"
               >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
@@ -139,11 +139,20 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} SAAD MEHMOOD (saadmehmood.com.pk). All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4 text-[11px]">
-            <span>Privacy Policy</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
+            <span className="inline-flex items-center gap-1.5 align-middle">
+              <span>Powered by :</span>
+              <Link href="https://helloidentity.co/" className="inline-flex items-center">
+                <Img alt="Hello Identity" width={100} height={20} src="/images/identity_logo_png.png" className="h-auto w-auto object-contain" />
+              </Link>
+            </span>
+            <Link href="/policy" className="hover:text-[#C5A059] transition-colors">
+              <span>Privacy Policy</span>
+            </Link>   
             <span aria-hidden="true">·</span>
-            <span>Terms of Service</span>
-            <span aria-hidden="true">·</span>
+            <Link href="/terms" className="hover:text-[#C5A059] transition-colors">
+              <span>Terms of Service</span>
+            </Link>
           </div>
         </div>
       </div>

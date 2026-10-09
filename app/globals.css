@@ -1,1 +1,6 @@
 @import "tailwindcss";
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay] {
+  display: none !important;
+}

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/context/cart-context';
 import type { Product } from '@/lib/db/schema';
+import ReactMarkdown from 'react-markdown';
 
 type ProductWithRawFields = Product & {
   description_urdu?: string | null;
@@ -81,7 +82,7 @@ export default function ProductPurchaseModule({
         {/* Price & Stock */}
         <div className="flex items-baseline gap-4 pt-1">
           <span className="text-2xl sm:text-3xl font-light tabular-nums text-[#F5F5F5]">
-            PKR {product.price.toLocaleString()}
+            <strong>PKR {product.price.toLocaleString()}</strong>
           </span>
           {product.originalPrice && (
             <span className="text-sm line-through text-[#666666] tabular-nums">
@@ -103,8 +104,9 @@ export default function ProductPurchaseModule({
               <p className="text-xs uppercase tracking-wider text-amber-500/70 mb-1">
                 Description (English) 
               </p>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                {englishDesc}
+
+              <p className="text-sm text-neutral-300 leading-relaxed whitespace-pre-line">
+                <ReactMarkdown>{englishDesc}</ReactMarkdown>
               </p>
             </div>
           )}
@@ -118,8 +120,9 @@ export default function ProductPurchaseModule({
               }`}
             >
               <p className="text-xs text-amber-500/70 mb-1">تفصیل (اردو)</p>
-              <p className="text-sm text-neutral-300 leading-relaxed font-serif">
-                {urduDesc}
+        
+              <p className="text-sm text-neutral-300 leading-relaxed whitespace-pre-line">
+                <ReactMarkdown>{urduDesc}</ReactMarkdown>
               </p>
             </div>
           )}
@@ -135,8 +138,9 @@ export default function ProductPurchaseModule({
               }`}
             >
               <p className="text-xs text-amber-500/70 mb-1">الوصف (العربية)</p>
-              <p className="text-sm text-neutral-300 leading-relaxed font-serif">
-                {arabicDesc}
+              
+              <p className="text-sm text-neutral-300 leading-relaxed whitespace-pre-line">
+                <ReactMarkdown>{arabicDesc}</ReactMarkdown>
               </p>
             </div>
           )}
@@ -242,7 +246,7 @@ export default function ProductPurchaseModule({
       <div className="pt-4 border-t border-[#1C1C1C] space-y-2.5 text-xs text-[#888888]">
         <div className="flex items-center gap-2.5">
           <Truck className="w-4 h-4 text-[#C5A059] shrink-0" />
-          <span>Free nationwide courier delivery (2–4 business days)</span>
+          <span>Free nationwide courier delivery (10 business days)</span>
         </div>
         <div className="flex items-center gap-2.5">
           <Box className="w-4 h-4 text-[#C5A059] shrink-0" />

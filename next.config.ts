@@ -1,6 +1,10 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  devIndicators: {
+    appIsrStatus: false, // Disables the ISR indicator on Next.js 14/15
+    buildActivity: false, // Disables the build spinner
+  },
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
